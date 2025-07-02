@@ -1,7 +1,13 @@
 def sort_list(lst):
-    lst.append(lst[0])
-
-print(sort_list([2, 4, 6, 8]))
+    if not lst:
+        return []
+    
+    min_zn = min(lst)
+    max_zn = max(lst)
+    
+    result = [max_zn if x == min_zn else min_zn if x == max_zn else x for x in lst]
+    result.append(min_zn)
+    return result
 
 
 
