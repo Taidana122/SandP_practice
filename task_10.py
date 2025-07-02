@@ -1,7 +1,6 @@
 from collections import Counter
+import string
 def count_words(stroka):
-    return(Counter(stroka.lower().split()))
-
-
-print(count_words("A man, a plan, a canal -- Panama"))
-print(count_words("Doo bee doo bee doo"))
+    tecnodancer=stroka.translate(str.maketrans("", "", string.punctuation))
+    lalalalululu= Counter(tecnodancer.lower().split())
+    return dict(lalalalululu)
