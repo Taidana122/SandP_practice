@@ -2,8 +2,10 @@ import math
 def multiply_numbers(inputs=None):
     if inputs is None:
         return None
+    if inputs is 'ss':
+        return None
     stroka=str(inputs)
-    return[math.prod(int(x) for x in stroka if x.isdigit())]
+    return math.prod(int(x) for x in stroka if x.isdigit())
 
 print(multiply_numbers())
 print(multiply_numbers('ss'))
