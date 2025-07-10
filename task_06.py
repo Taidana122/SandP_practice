@@ -14,17 +14,17 @@ def rps_game_winner(game):
     if choose1 not in choose or choose2 not in choose:
         raise NoSuchStrategyError()
     if choose1 == choose2:
-        return f"{player1}, {choose1}"
+        return f"{player1} {choose1}"
     if choose1 == 'R' and choose2 == 'S':
-        return f"{player1}, {choose1}"
+        return f"{player1} {choose1}"
     if choose1 == 'P' and choose2 == 'R':
-        return f"{player1}, {choose1}"   
+        return f"{player1} {choose1}"   
     if choose1 == 'S' and choose2 == 'P':
-        return f"{player1}, {choose1}"
+        return f"{player1} {choose1}"
 
     if choose1 == 'S' and choose2 == 'R':
-        return f"{player2}, {choose2}"
+        return f"{player2} {choose2}"
     if choose1 == 'R' and choose2 == 'P':
-        return f"{player2}, {choose2}"    
+        return f"{player2} {choose2}"    
     if choose1 == 'P' and choose2 == 'S':
-        return f"{player2}, {choose2}"
+        return f"{player2} {choose2}"
