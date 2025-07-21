@@ -26,7 +26,7 @@ class Dessert:
         try:
             self._calories = int(value)
         except (ValueError, TypeError):
-            self._calories = 0
+            pass  
 
 
 class JellyBean:
