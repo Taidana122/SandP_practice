@@ -25,27 +25,25 @@ class Dessert:
     def calories(self, value):
         try:
             self._calories = int(value)
-        except (ValueError, TypeError):
+        except (ValueError, TypeTypeError):
             pass  
-
 
 class JellyBean:
     def __init__(self, name=None, calories=0, flavor=None):
-        super().__init__(name, calories)
-        self.flavor=flavor
+        super().__init__(self, name, calories)
+        self._flavor = flavor
     
     @property
     def flavor(self):
-        return self.flavor
-
+        return self._flavor
+    
     @flavor.setter
     def flavor(self, value):
-        self.value = value
-
-    def is_delicious(self):
-        if self.flavor != 'black licorice':
-            return False
-        else:
-            return True
+        self._flavor = value
     
+    def is_delicious(self):
+        if self.flavor == 'black licorice':
+            return True
+        else:
+            return False
     
