@@ -23,8 +23,4 @@ class Dessert:
 
     @calories.setter
     def calories(self, value):
-        try:
-            self._calories = int(value)
-        except (ValueError, TypeError):
-            pass  
-    
+        self._calories = value
