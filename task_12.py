@@ -23,10 +23,7 @@ class Dessert:
 
     @calories.setter
     def calories(self, value):
-        try:
-            self._calories = int(value)
-        except (ValueError, TypeTypeError):
-            pass  
+        self._calories = value
 
 class JellyBean:
     def __init__(self, name=None, calories=0, flavor=None):
