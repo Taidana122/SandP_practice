@@ -1,3 +1,9 @@
+#Реализуйте класс Dessert c геттерами и сеттерами name и calories, конструктором,
+#принимающим на вход name и calories (не обязательные параметры), а также двумя
+#методами is_healthy (возвращает true при условии калорийности десерта менее
+#200) и is_delicious (возвращает true для всех десертов). 
+
+
 class Dessert:
     def __init__(self, name=None, calories=None):
         self._name = name
@@ -8,10 +14,10 @@ class Dessert:
         return self._name
 
     @name.setter
-    def name(self, value):
-        if not isinstance(value, str):
+    def name(self, value1):
+        if not isinstance(value1, str):
             raise ValueError("Название десерта должно быть строкой.")
-        self._name = value
+        self._name = value1
 
     @property
     def calories(self):
@@ -25,11 +31,14 @@ class Dessert:
             raise ValueError("Калории не могут быть отрицательными.")
         self._calories = value
 
-    def is_healthy(self):
-        return self._calories is not None and self._calories < 200
-
     def is_delicious(self):
         return True
+
+    def is_healthy(self):
+        try:
+            return self._calories is not None and float(self._calories) < 200
+        except (ValueError, TypeError):
+            return False
 
 
 
