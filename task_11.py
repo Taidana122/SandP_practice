@@ -25,10 +25,6 @@ class Dessert:
 
     @calories.setter
     def calories(self, value):
-        if not isinstance(value, (int, float)):
-            return False
-        if value < 0:
-            return False
         self._calories = value
 
     def is_delicious(self):
@@ -39,6 +35,7 @@ class Dessert:
             return self._calories is not None and float(self._calories) < 200
         except (ValueError, TypeError):
             return False
+
 
 
 
