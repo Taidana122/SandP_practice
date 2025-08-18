@@ -16,7 +16,7 @@ class Dessert:
     @name.setter
     def name(self, value1):
         if not isinstance(value1, str):
-            raise ValueError("Название десерта должно быть строкой.")
+            return False
         self._name = value1
 
     @property
@@ -26,9 +26,9 @@ class Dessert:
     @calories.setter
     def calories(self, value):
         if not isinstance(value, (int, float)):
-            raise ValueError("Калории должны быть числом.")
+            return False
         if value < 0:
-            raise ValueError("Калории не могут быть отрицательными.")
+            return False
         self._calories = value
 
     def is_delicious(self):
