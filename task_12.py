@@ -40,23 +40,24 @@ class Dessert:
         except (ValueError, TypeError):
             return False
 
-class JellyBean:
-    def __init__(self, name=None, calories=0, flavor=None):
-        super().__init__(self, name, calories)
+class JellyBean(Dessert):
+    def __init__(self, name=None, calories=None, flavor=None):
+        super().__init__(name, calories)
         self._flavor = flavor
-    
+
     @property
     def flavor(self):
         return self._flavor
-    
+
     @flavor.setter
     def flavor(self, value):
-        self._flavor = value
-    
-    def is_delicious(self):
-        if self.flavor == 'black licorice':
-            return True
-        else:
+        if not isinstance(value, str):
             return False
+        self._flavor = value
+
+    def is_delicious(self):
+        # Невкусно только если вкус = "black licorice"
+        return self._flavor != "black licorice"
     
+
 
